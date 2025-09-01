@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Esmaeili | AI & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f0f4f8',
+                        secondary: '#e2e8f0',
+                        accent: '#7c3aed',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans bg-primary text-dark overflow-x-hidden;
+            }
+            .section-padding {
+                @apply py-24 px-4 md:px-8 lg:px-16;
+            }
+            .card {
+                @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300;
+            }
+            .card-hover {
+                 @apply hover:shadow-2xl hover:-translate-y-2;
+            }
+            .btn {
+                @apply px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent;
+            }
+            .btn-primary {
+                @apply bg-accent text-white shadow-lg hover:bg-purple-700 focus:ring-purple-500;
+            }
+            .btn-secondary {
+                @apply bg-secondary text-dark hover:bg-slate-300 focus:ring-slate-400;
+            }
+            .dot-pattern {
+                background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+                background-size: 20px 20px;
+            }
+            .timeline::before {
+                content: '';
+                @apply absolute top-0 left-4 md:left-1/2 -ml-px h-full w-0.5 bg-slate-300;
+            }
+            .timeline-item {
+                @apply relative pl-8 md:pl-0 mb-8;
+            }
+            .timeline-marker {
+                @apply absolute top-1 left-4 md:left-1/2 -ml-2.5 h-5 w-5 rounded-full border-4 border-primary bg-accent;
+            }
+            .stagger-animation {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .stagger-animation.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg py-4 px-6 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-xl"></i>
+                </div>
+                <span class="font-bold text-xl">Amir<span class="text-accent">Esmaeili</span></span>
+            </div>
+            
+            <div class="hidden lg:flex space-x-8">
+                <a href="#home" class="font-medium hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="font-medium hover:text-accent transition-colors">About</a>
+                <a href="#skills" class="font-medium hover:text-accent transition-colors">Skills</a>
+                <a href="#work-experience" class="font-medium hover:text-accent transition-colors">Experience</a>
+                <a href="#projects" class="font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="#education" class="font-medium hover:text-accent transition-colors">Education</a>
+                <a href="#research" class="font-medium hover:text-accent transition-colors">Research</a>
+                <a href="#contact" class="font-medium hover:text-accent transition-colors">Contact</a>
+            </div>
+            
+            <button class="lg:hidden text-dark">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 section-padding dot-pattern">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 stagger-animation">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    AI & Machine Learning Engineer
+                    <br>
+                    <span class="text-accent">Backend Developer</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl">
+                    Building intelligent, scalable systems with a focus on end-to-end ML pipelines, conversational AI, and robust backend architecture.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="mailto:esmaeili.amiir@gmail.com" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center stagger-animation" style="transition-delay: 200ms;">
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <div class="absolute inset-0 rounded-full bg-accent/10 animate-pulse-slow"></div>
+                    <div class="absolute inset-4 rounded-full bg-accent/20 animate-pulse-slow" style="animation-delay: 0.5s;"></div>
+                    <div class="absolute inset-8 rounded-full bg-accent/30 animate-pulse-slow" style="animation-delay: 1s;"></div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 rounded-full border-4 border-accent/30"></div>
+                        <div class="absolute inset-8 rounded-full border-4 border-accent"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"><div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center animate-float"><i class="fas fa-robot text-4xl text-accent"></i></div></div>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"><div class="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center animate-float" style="animation-delay: 0.5s;"><i class="fas fa-comments text-2xl text-accent"></i></div></div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"><div class="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center animate-float" style="animation-delay: 1s;"><i class="fas fa-cogs text-2xl text-accent"></i></div></div>
+                        <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2"><div class="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center animate-float" style="animation-delay: 1.5s;"><i class="fas fa-code text-2xl text-accent"></i></div></div>
+                        <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"><div class="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center animate-float" style="animation-delay: 2s;"><i class="fas fa-server text-2xl text-accent"></i></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-light">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="stagger-animation">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 mb-6">
+                    I am an AI and Machine Learning Engineer with a strong foundation in backend development. My passion lies in building intelligent systems that solve real-world problems, from NLP-driven applications and conversational agents to complex image processing tasks. I thrive on deploying scalable, end-to-end ML pipelines that deliver tangible business value.
+                </p>
+                <p class="text-lg text-gray-600">
+                    My approach is rooted in critical thinking, collaborative problem-solving, and a commitment to clean, efficient code. I am dedicated to continuous learning to stay at the forefront of AI and software engineering.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 stagger-animation"><h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Expertise</h2><div class="w-20 h-1 bg-accent mx-auto"></div></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card stagger-animation"><h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-brain w-6 mr-3 text-accent"></i>Machine Learning & AI</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Deep Learning</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Transformer Models</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Reinforcement Learning</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">PyTorch</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">TensorFlow</span></div></div>
+                <div class="card stagger-animation"><h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-comments w-6 mr-3 text-accent"></i>NLP / LLM Tools</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">LangChain</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">OpenAI API</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">HuggingFace Transformers</span></div></div>
+                <div class="card stagger-animation"><h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-server w-6 mr-3 text-accent"></i>Frameworks & DB</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Django</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Laravel</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">MySQL</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">PostgreSQL</span></div></div>
+                <div class="card stagger-animation"><h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-code w-6 mr-3 text-accent"></i>Programming</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Python</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">C++</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">PHP</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">JavaScript</span></div></div>
+                <div class="card stagger-animation"><h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-cogs w-6 mr-3 text-accent"></i>Software Development</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Agile Methodologies</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">API Development</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Docker</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">RESTful APIs</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Linux</span></div></div>
+                <div class="card stagger-animation"><h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-chart-line w-6 mr-3 text-accent"></i>Data Science</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Pandas</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Matplotlib</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Seaborn</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Streamlit</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Power BI</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work-experience" class="section-padding bg-light">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 stagger-animation">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">My professional journey.</p>
+            </div>
+            <div class="relative timeline">
+                <div class="timeline-item stagger-animation md:w-1/2 md:pr-8">
+                    <div class="timeline-marker"></div>
+                    <div class="card card-hover"><div class="flex justify-between items-center mb-2"><h3 class="text-xl font-bold">ML Engineer / Data Scientist</h3><span class="text-sm font-medium text-accent">02/2024 - Present</span></div><p class="font-semibold text-gray-700 mb-3">Desmer Guvenlik</p><ul class="list-disc list-inside text-gray-600 space-y-2"><li>Built and deployed AI optimization models for logistics, improving efficiency and reducing delays.</li><li>Applied causal inference to evaluate the impact of business process changes.</li><li>Integrated ML models into live systems, enhancing real-time decision-making.</li><li>Conducted demand forecasting on ATM cash withdrawals to optimize resource allocation.</li></ul></div>
+                </div>
+                <div class="timeline-item stagger-animation md:w-1/2 md:ml-auto md:pl-8">
+                    <div class="timeline-marker"></div>
+                    <div class="card card-hover"><div class="flex justify-between items-center mb-2"><h3 class="text-xl font-bold">Backend Developer</h3><span class="text-sm font-medium text-accent">02/2023 - 01/2024</span></div><p class="font-semibold text-gray-700 mb-3">Aral Studio</p><ul class="list-disc list-inside text-gray-600 space-y-2"><li>Designed and optimized backend systems for high user traffic, ensuring excellent uptime.</li><li>Improved API response time through codebase refactoring and database indexing.</li><li>Collaborated with teams to implement scalable microservices.</li></ul></div>
+                </div>
+                <div class="timeline-item stagger-animation md:w-1/2 md:pr-8">
+                    <div class="timeline-marker"></div>
+                    <div class="card card-hover"><div class="flex justify-between items-center mb-2"><h3 class="text-xl font-bold">Backend Developer</h3><span class="text-sm font-medium text-accent">09/2021 - 01/2023</span></div><p class="font-semibold text-gray-700 mb-3">NOAY</p><ul class="list-disc list-inside text-gray-600 space-y-2"><li>Built secure and scalable backend infrastructure for a cryptocurrency platform.</li><li>Developed robust APIs and microservices that reduced server load by 25%.</li><li>Partnered with frontend teams to ensure seamless integration and user experience.</li></ul></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 stagger-animation"><h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2><div class="w-20 h-1 bg-accent mx-auto"></div><p class="mt-6 text-gray-600 max-w-2xl mx-auto">A selection of my personal and freelance work.</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://github.com/amir-esmaeili/resume-matching-system" target="_blank" rel="noopener noreferrer" class="card card-hover h-full flex flex-col stagger-animation">
+                    <h3 class="text-xl font-semibold mb-2">Resume Matching System</h3><p class="text-gray-600 mb-4 flex-grow">AI-powered system leveraging text embeddings to align candidate profiles with job descriptions, using a Django and PostgreSQL backend with pgvector for similarity search.</p><div class="flex flex-wrap gap-2 mt-auto"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Python</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Django</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">OpenAI API</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Docker</span></div>
+                </a>
+                <a href="https://github.com/amir-esmaeili/question-generating-app" target="_blank" rel="noopener noreferrer" class="card card-hover h-full flex flex-col stagger-animation">
+                    <h3 class="text-xl font-semibold mb-2">Question Generating App</h3><p class="text-gray-600 mb-4 flex-grow">A prompt-engineered platform using OpenAI, Gemini, and DeepSeek APIs to automatically generate exam questions from uploaded resources (PDFs, text, images).</p><div class="flex flex-wrap gap-2 mt-auto"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Python</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Gemini API</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Prompt Engineering</span></div>
+                </a>
+                <a href="https://github.com/amir-esmaeili/insurance-recommender-system" target="_blank" rel="noopener noreferrer" class="card card-hover h-full flex flex-col stagger-animation">
+                    <h3 class="text-xl font-semibold mb-2">Insurance Recommender System</h3><p class="text-gray-600 mb-4 flex-grow">A hybrid recommender system analyzing customer purchase history and behavior to predict insurance preferences and identify cross-sell opportunities.</p><div class="flex flex-wrap gap-2 mt-auto"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Python</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Scikit-learn</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Recommender Systems</span></div>
+                </a>
+                <a href="https://github.com/amir-esmaeili/ai-itinerary-generator" target="_blank" rel="noopener noreferrer" class="card card-hover h-full flex flex-col stagger-animation">
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Itinerary Generator</h3><p class="text-gray-600 mb-4 flex-grow">A serverless application using OpenAI GPT-4 to generate detailed travel itineraries, architected with an asynchronous Cloudflare Workers backend.</p><div class="flex flex-wrap gap-2 mt-auto"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Cloudflare Workers</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">SvelteKit</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Node.js</span></div>
+                </a>
+                <a href="https://github.com/amir-esmaeili/educational-chatbot" target="_blank" rel="noopener noreferrer" class="card card-hover h-full flex flex-col stagger-animation">
+                    <h3 class="text-xl font-semibold mb-2">Educational Chatbot</h3><p class="text-gray-600 mb-4 flex-grow">A backend service answering educational questions based on provided content, implementing a three-step process of content embedding, retrieval, and answer generation.</p><div class="flex flex-wrap gap-2 mt-auto"><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Python</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">FastAPI</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Transformers</span><span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Docker</span></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding bg-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 stagger-animation"><h2 class="text-3xl md:text-4xl font-bold mb-4">Education</h2><div class="w-20 h-1 bg-accent mx-auto"></div></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card card-hover stagger-animation">
+                    <div class="flex justify-between items-center mb-2"><h3 class="text-xl font-bold">B.Sc. Computer Science</h3><span class="text-sm font-medium text-accent">2019 - 2023</span></div>
+                    <p class="font-semibold text-gray-700 mb-3">University of Tabriz</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Full Scholarship Recipient, ranked 4th in Overall GPA.</li>
+                        <li>Honorable Mention in ICPC Contest (2019, 2020, 2021).</li>
+                        <li>Top 3% in National University Entrance Exam.</li>
+                    </ul>
+                </div>
+                <div class="card card-hover stagger-animation">
+                    <div class="flex justify-between items-center mb-2"><h3 class="text-xl font-bold">High School Diploma</h3><span class="text-sm font-medium text-accent">2014 - 2018</span></div>
+                    <p class="font-semibold text-gray-700 mb-3">National Organization for Development of Exceptional Talents (Sampad)</p>
+                    <p class="text-gray-600">Graduated with honors from a national program for exceptional students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 stagger-animation"><h2 class="text-3xl md:text-4xl font-bold mb-4">Research Experience</h2><div class="w-20 h-1 bg-accent mx-auto"></div><p class="mt-6 text-gray-600 max-w-2xl mx-auto">My contributions to academic research in machine learning.</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card card-hover stagger-animation"><h3 class="text-xl font-semibold mb-2">Master's Thesis Research</h3><p class="text-sm text-gray-500 mb-3">Supervisor: Dr. Farnaz Mahan</p><p class="font-semibold text-gray-700">Title: "Explainable Hybrid Vision Transformers with Transfer Learning for Brain Tumor Detection in MRI Images" (under preparation)</p></div>
+                <div class="card card-hover stagger-animation"><h3 class="text-xl font-semibold mb-2">Model Merging in LLMs and Pre-trained Models</h3><p class="text-sm text-gray-500 mb-3">Supervisor: Prof. Mehrdad Mahdavi at Penn State University (remote)</p><p class="text-gray-600">Conducted a literature review and implemented methods like "Model Merging by Uncertainty-Based Gradient Matching" and "Fisher-Weighted Averaging".</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 stagger-animation"><h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2><div class="w-20 h-1 bg-accent mx-auto"></div><p class="mt-6 text-gray-600 max-w-2xl mx-auto">Interested in collaborating or have an opportunity in mind? I'd love to hear from you.</p></div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="stagger-animation space-y-8">
+                    <h3 class="text-2xl font-semibold">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center"><div class="w-12 h-12 rounded-lg bg-white shadow-md flex-center mr-4 flex-shrink-0 flex items-center justify-center"><i class="fas fa-envelope text-accent text-xl"></i></div><div><h4 class="font-semibold">Email</h4><a href="mailto:esmaeili.amiir@gmail.com" class="text-gray-600 hover:text-accent">esmaeili.amiir@gmail.com</a></div></div>
+                        <div class="flex items-center"><div class="w-12 h-12 rounded-lg bg-white shadow-md flex-center mr-4 flex-shrink-0 flex items-center justify-center"><i class="fas fa-map-marker-alt text-accent text-xl"></i></div><div><h4 class="font-semibold">Location</h4><p class="text-gray-600">Tabriz</p></div></div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-xl hover:bg-accent hover:text-white transition-all duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-xl hover:bg-accent hover:text-white transition-all duration-300" aria-label="Github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="stagger-animation">
+                    <div class="card !p-8 card-hover">
+                        <form action="https://formspree.io/f/meolzkgg" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" name="name" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full py-3.5">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4"><div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center"><i class="fas fa-brain text-white text-xl"></i></div><span class="font-bold text-xl">Amir<span class="text-accent">Esmaeili</span></span></div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl" aria-label="Github"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="text-gray-400">&copy; 2025 Amir Esmaeili. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.dataset.delay || 100;
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, delay); 
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.stagger-animation').forEach((el, index) => {
+                el.style.transitionDelay = `${(index % 6) * 100}ms`;
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
